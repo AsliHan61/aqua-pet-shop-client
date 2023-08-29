@@ -1,7 +1,7 @@
 
 import './App.css';
 import { Route, Routes } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import React from "react";
 import Header from '../src/components/Header';
 import Navbar from '../src/components/Navbar';
@@ -19,21 +19,21 @@ const apiURL = "mongodb://127.0.0.1:27017/aqua-pet-shop-server";
 
 function App() {
 
-const [allProducts, setAllProducts] = useState([]);
+// const [allProducts, setAllProducts] = useState([]);
 
-  const getAllProducts = () => {
-    axios
-      .get(apiURL)
-      .then((response) => {
-        setAllProducts(response.data);
-      })
-      .catch((err) => console.log(err));
-  };
+//   const getAllProducts = () => {
+//     axios
+//       .get(apiURL)
+//       .then((response) => {
+//         setAllProducts(response.data);
+//       })
+//       .catch((err) => console.log(err));
+//   };
   
   
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar />
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
@@ -41,7 +41,8 @@ const [allProducts, setAllProducts] = useState([]);
         <Route path="/admin" element={<AdminPage />}> </Route>
         <Route path="/products/:productId"  element={<SingleProduct  product={allProducts} />}> </Route>
       </Routes>
-      <Footer />
+      <Footer /> */}
+      <HomePage />
     </div>
   );
   };

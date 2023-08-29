@@ -14,29 +14,23 @@ function NewProduct() {
     rating: "",
    };
    
-   const [form, setForm] = useState(initialForm);
-
-
+  const [form, setForm] = useState(initialForm);
 
   const navigate = useNavigate();
 
+  const handleForm = (e) => {
+    const inputName = e.target.name;
+    const inputValue = e.target.value;
+    setForm((prevForm) => ({ ...prevForm, [inputName]: inputValue })); 
+  };
+  
   function handleSubmit (e) {
-
     e.preventDefault();
-
-    const addProduct =  {
-      name: name,
-      type: type,
-      price: price,
-      stock: stock,
-      description: description,
-      imgURL: imgURL,
-      rating: rating,
-       
-    }
-
-   //  axios.post("https://ih-beers-api2.herokuapp.com/beers/new", addProduct)
-    .then (navigate("/"))
+    const newProduct = form;
+    axios.post("mongodb://127.0.0.1:27017/aqua-pet-shop-server/products/new", newProduct)
+    .then((response) => {
+      setForm(initialForm)
+    });
   }
  
 
@@ -44,30 +38,29 @@ function NewProduct() {
   return (
     <div>
       
-      <form onSubmit={handleSubmit} >
-      <label>Name</label>
-      <input type="text" id="name" name="name" value={name} onChange={(e) => setName(e.target.value)}></input>
+      <form onSubmit={handleSubmit}>
+        <label>Name</label>
+        <input type="text" id="name" name="name" value={form.name} onChange={handleForm} > </input>
 
-      <label>Type</label>
-      <input type="text" id="type" name="type" value={type} onChange={(e) => setName(e.target.value)}></input>
+        <label>Type</label>
+        <input type="text" id="type" name="type" value={form.type} onChange={handleForm} > </input>
 
-      <label>Price</label>
-      <input type="text" id="price" name="price" value={price} onChange={(e) => setName(e.target.value)}></input>
+        <label>Price</label>
+        <input type="text" id="price" name="price" value={form.price} onChange={handleForm} > </input>
 
-      <label>Quantity in Stock</label>
-      <input type="text" id="stock" name="stock" value={stock} onChange={(e) => setName(e.target.value)}></input>
+        <label>Quantity in Stock</label>
+        <input type="text" id="stock" name="stock" value={form.stock} onChange={handleForm} > </input>
 
-      <label>Description</label>
-      <input type="text" id="stock" name="stock" value={stock} onChange={(e) => setName(e.target.value)}></input>
+        <label>Description</label>
+        <input type="text" id="description" name="description" value={form.description} onChange={handleForm} > </input>
 
-      <label>Image</label>
-      <input type="text" id="imgURL" name="imgURL" value={imgURL} onChange={(e) => setName(e.target.value)}></input>
+        <label>Image URL</label>
+        <input type="text" id="imgURL" name="imgURL" value={form.imgURL} onChange={handleForm} > </input>
 
-      <label>Rating</label>
-      <input type="text" id="rating" name="rating" value={rating} onChange={(e) => setName(e.target.value)}></input>
-      
+        <label>Rating</label>
+        <input type="text" id="rating" name="rating" value={form.rating} onChange={handleForm} > </input>
 
-      <button type="submit"> Add a New Beer </button>
+      <button type="submit"> Add a New Product </button>
       </form>
 
     </div>
