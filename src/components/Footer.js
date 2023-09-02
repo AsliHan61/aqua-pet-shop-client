@@ -1,8 +1,5 @@
-import React, { useState, useEffect } from 'react';
-
 
 function Footer () {
-    const [Footer, setCount] = useState();
     
     return (
         <footer class="py-5 bg-dark">

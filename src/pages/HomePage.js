@@ -1,8 +1,7 @@
 import React from "react";
-import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import ProductsPage from "./pages/ProductsPage";
-import Footer from "./components/Footer"
+import Header from '../components/Header';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 function HomePage() {
 
@@ -11,8 +10,9 @@ function HomePage() {
       <div>
         <Navbar />
         <Header />
-        
+        <h1>Working</h1>
         <Footer />
+        
       </div>
     );
   }
