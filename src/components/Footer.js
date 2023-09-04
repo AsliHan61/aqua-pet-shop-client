@@ -1,9 +1,14 @@
 
 function Footer () {
+
+  const footerStyle = {
+    backgroundcolour: 'blue'
+
+  }
     
     return (
-        <footer class="py-5 bg-dark">
-      <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p></div>
+        <footer style={footerStyle}>
+      <div><p>Copyright &copy; Your Website 2023</p></div>
   </footer>
     )
 };
