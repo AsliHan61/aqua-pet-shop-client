@@ -1,14 +1,18 @@
 
-function Header() {
-    return (
+import headerImg from "../assets/header.png"
+import {React} from "react";
 
-<header> 
+function Header() {
+
+  return (
+
+
     <div>
-        <div>
-          <img src="./assets/img/header.png" alt="Image Header" />
-        </div>
+        
+          <img src={headerImg} /> 
+        
     </div>
-</header>
+
     )
     };
 
