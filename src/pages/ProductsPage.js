@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+
+import React, { Component } from 'react';
+import { useState } from "react";
 import axios from "axios";
 import ProductDetail from '../pages/ProductDetail';
 import CardActions from '@mui/material/CardActions';
@@ -64,3 +66,4 @@ function ProductsPage () {
 
 
 export default ProductsPage;
+
