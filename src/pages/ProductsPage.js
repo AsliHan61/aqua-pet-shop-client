@@ -1,12 +1,7 @@
 
-import React, { Component } from 'react';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import ProductDetail from '../pages/ProductDetail';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
 import NewProduct from "../components/NewProduct";
 import { Link, useParams } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
