@@ -14,7 +14,7 @@ function Navbar() {
 
 
     return (
-      <nav className={"navbar navbar-expand-lg navbar-light bg-light"}>
+      <nav className={"navbar navbar-expand-lg navbar-light bg-light"} >
       <div className={"container px-4 px-lg-5"}>
         <img src={logosmallImg} alt="alt-test" />
         
@@ -56,11 +56,9 @@ function Navbar() {
         </Link>
                  
               </form>
-
-              
-
-            
-</div>
+        
+      </div>
+      </nav>
 
     );
   }
