@@ -1,3 +1,18 @@
+<<<<<<< HEAD:aqua-pet-shop-client/src/pages/ProductsPage.js
+import React, { Component } from 'react'
+
+export class ProductsPage extends Component {
+  render() {
+    return (
+      <div>
+        
+      </div>
+    )
+  }
+}
+
+export default ProductsPage
+=======
 import { useState } from "react";
 import axios from "axios";
 import Card from '@mui/material/Card';
@@ -45,3 +60,4 @@ function ProductsPage () {
 
 
 export default ProductsPage;
+>>>>>>> c7216923600e70945943d1d52561bda0e767f664:src/pages/ProductsPage.js

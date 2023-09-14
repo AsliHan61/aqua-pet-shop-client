@@ -1,3 +1,12 @@
+<<<<<<< HEAD:aqua-pet-shop-client/src/pages/AdminPage.js
+// import { Link } from "react-router-dom"
+// import { useState, useContext } from "react";
+// import axios from "axios";
+// import { AuthContext } from "../context/auth.context";
+// import avatarImage from '../assets/default-avatar.png';
+
+const AdminPage = props => {
+=======
 import { Link } from "react-router-dom"
 import { useState, useContext } from "react";
 import axios from "axios";
@@ -5,6 +14,7 @@ import axios from "axios";
 // import avatarImage from '../assets/default-avatar.png';
 
 const AdminPage = (props) => {
+>>>>>>> c7216923600e70945943d1d52561bda0e767f664:src/pages/AdminPage.js
     // const [showUpload, setShowUpload] = useState(false);
     // const [image, setImage] = useState("");
     // const { user, setUser, isLoggedIn, logOutUser } = useContext(AuthContext);
@@ -35,6 +45,32 @@ const AdminPage = (props) => {
     //   }
   return (
 <div className="homePageContainer">
+<<<<<<< HEAD:aqua-pet-shop-client/src/pages/AdminPage.js
+<form class="row g-3">
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Email</label>
+    <input type="email" class="form-control" id="inputEmail4"> </input>
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Password</label>
+    <input type="password" class="form-control" id="inputPassword4"> </input>
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"> </input>
+  </div>
+  <div class="col-12">
+    <label for="inputAddress2" class="form-label">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"> </input>
+  </div>
+  <div class="col-md-6">
+    <label for="inputCity" class="form-label">City</label>
+    <input type="text" class="form-control" id="inputCity"> </input>
+  </div>
+  <div class="col-md-4">
+    <label for="inputState" class="form-label">State</label>
+    <select id="inputState" class="form-select">
+=======
 <form className="row g-3">
   <div className="col-md-6">
     <label htmlFor="inputEmail4" className="form-label">Email</label>
@@ -59,10 +95,21 @@ const AdminPage = (props) => {
   <div className="col-md-4">
     <label htmlFor="inputState" className="form-label">State</label>
     <select id="inputState" className="form-select">
+>>>>>>> c7216923600e70945943d1d52561bda0e767f664:src/pages/AdminPage.js
       <option selected>Choose...</option>
       <option>...</option>
     </select>
   </div>
+<<<<<<< HEAD:aqua-pet-shop-client/src/pages/AdminPage.js
+  <div class="col-md-2">
+    <label for="inputZip" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="inputZip"> </input>
+  </div>
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck"> </input>
+      <label class="form-check-label" for="gridCheck">
+=======
   <div className="col-md-2">
     <label htmlFor="inputZip" className="form-label">Zip</label>
     <input type="text" className="form-control" id="inputZip"> </input>
@@ -71,12 +118,18 @@ const AdminPage = (props) => {
     <div className="form-check">
       <input className="form-check-input" type="checkbox" id="gridCheck"> </input>
       <label className="form-check-label" htmlFor="gridCheck">
+>>>>>>> c7216923600e70945943d1d52561bda0e767f664:src/pages/AdminPage.js
         Check me out
       </label>
     </div>
   </div>
+<<<<<<< HEAD:aqua-pet-shop-client/src/pages/AdminPage.js
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Sign in</button>
+=======
   <div className="col-12">
     <button type="submit" className="btn btn-primary">Sign in</button>
+>>>>>>> c7216923600e70945943d1d52561bda0e767f664:src/pages/AdminPage.js
   </div>
 </form>
         
