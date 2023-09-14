@@ -1,13 +1,13 @@
 import React from "react";
 import axios from "axios";
-<<<<<<< HEAD:aqua-pet-shop-client/src/components/NewProduct.js
+
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-=======
-import { useState } from "react";
+
+
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
->>>>>>> c7216923600e70945943d1d52561bda0e767f664:src/components/NewProduct.js
+
 
 function NewProduct() {
    const initialForm = {
@@ -19,7 +19,7 @@ function NewProduct() {
     imgURL: "",
     rating: "",
    };
-<<<<<<< HEAD:aqua-pet-shop-client/src/components/NewProduct.js
+
    
   const [form, setForm] = useState(initialForm);
 
@@ -31,49 +31,48 @@ function NewProduct() {
     setForm((prevForm) => ({ ...prevForm, [inputName]: inputValue })); 
   };
   
-=======
+
    const [form, setForm] = useState(initialForm);
 
 
->>>>>>> c7216923600e70945943d1d52561bda0e767f664:src/components/NewProduct.js
+const apiURL = 'http://localhost:5005';
+
+const initialForm = {
+  name: "",
+  type: "",
+  price:"" ,
+  stock: "",
+  description: "",
+  imgURL: "",
+  rating: "",
+ };
+
+function NewProduct(props) {
+  
+   const [form, setForm] = useState(initialForm);
+   const token = localStorage.getItem("authToken")
+
   function handleSubmit (e) {
     e.preventDefault();
     const newProduct = form;
-    axios.post("mongodb://127.0.0.1:27017/aqua-pet-shop-server/products/new", newProduct)
+    axios.post(`${apiURL}/api/products`, newProduct, {
+      headers: {
+        Authorization:`Bearer ${token}`
+      }
+        })
     .then((response) => {
       setForm(initialForm)
+
+      props.refreshProducts();  
+    })
+    .catch((error) => console.log(error)); 
+  };
+  
+
     });
-<<<<<<< HEAD:aqua-pet-shop-client/src/components/NewProduct.js
-  }
- 
 
-
-  return (
-    <div>
-      
-      <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input type="text" id="name" name="name" value={form.name} onChange={handleForm} > </input>
-
-        <label>Type</label>
-        <input type="text" id="type" name="type" value={form.type} onChange={handleForm} > </input>
-
-        <label>Price</label>
-        <input type="text" id="price" name="price" value={form.price} onChange={handleForm} > </input>
-
-        <label>Quantity in Stock</label>
-        <input type="text" id="stock" name="stock" value={form.stock} onChange={handleForm} > </input>
-
-        <label>Description</label>
-        <input type="text" id="description" name="description" value={form.description} onChange={handleForm} > </input>
-
-        <label>Image URL</label>
-        <input type="text" id="imgURL" name="imgURL" value={form.imgURL} onChange={handleForm} > </input>
-
-        <label>Rating</label>
-        <input type="text" id="rating" name="rating" value={form.rating} onChange={handleForm} > </input>
-=======
   } 
+
 
   const handleForm = (e) => {
     const inputName = e.target.name;
@@ -83,50 +82,48 @@ function NewProduct() {
   
 
   return (
-  //  <Navbar />
-
-
-
-
-
-
 
   
-    <>
-      <form onSubmit={handleSubmit}>
-        <label>Name</label>
-        <input type="text" id="name" name="name" value={form.name} onChange={handleForm} /> 
+    <div>
+      <form onSubmit={handleSubmit} style={{width:'800px', paddingLeft:'40%'}}>
 
+        <label>Name</label>
+        <input type="text" id="name" name="name" value={form.name} onChange={handleForm} /> <p></p>
+        
         <label>Type</label>
-        <input type="text" id="type" name="type" value={form.type} onChange={handleForm} />
+        <input type="text" id="type" name="type" value={form.type} onChange={handleForm} /> <p></p>
 
         <label>Price</label>
-        <input type="text" id="price" name="price" value={form.price} onChange={handleForm} />
+        <input type="text" id="price" name="price" value={form.price} onChange={handleForm} /> <p></p>
 
         <label>Quantity in Stock</label>
-        <input type="text" id="stock" name="stock" value={form.stock} onChange={handleForm} />
+        <input type="text" id="stock" name="stock" value={form.stock} onChange={handleForm} /> <p></p>
 
         <label>Description</label>
-        <input type="text" id="description" name="description" value={form.description} onChange={handleForm} />
+        <input type="text" id="description" name="description" value={form.description} onChange={handleForm} /> <p></p>
 
         <label>Image URL</label>
-        <input type="text" id="imgURL" name="imgURL" value={form.imgURL} onChange={handleForm} />
+        <input type="text" id="imgURL" name="imgURL" value={form.imgURL} onChange={handleForm} /> <p></p>
 
         <label>Rating</label>
+
         <input type="text" id="rating" name="rating" value={form.rating} onChange={handleForm} />
->>>>>>> c7216923600e70945943d1d52561bda0e767f664:src/components/NewProduct.js
+
 
       <button type="submit"> Add a New Product </button>
       </form>
 
-<<<<<<< HEAD:aqua-pet-shop-client/src/components/NewProduct.js
+
     </div>
   );
-=======
+
+ 
+
     </>
   );
   <Footer />
->>>>>>> c7216923600e70945943d1d52561bda0e767f664:src/components/NewProduct.js
+
 };
+
 
 export default NewProduct;
