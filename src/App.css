@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.logoHeader {
+  background-image: url('../public/assets/img/logoW.png');
+}

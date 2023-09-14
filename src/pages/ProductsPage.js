@@ -1,45 +1,64 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import Card from '@mui/material/Card';
+import ProductDetail from '../pages/ProductDetail';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-const apiURL = "mongodb://127.0.0.1:27017/aqua-pet-shop-server";
+import NewProduct from "../components/NewProduct";
+import { Link, useParams } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import Navbar from '../components/Navbar';
+
+
 
 function ProductsPage () {
-    const [allProducts, setAllProducts] = useState([]);
-
+    const [products, setProducts] = useState([]);
+    
+  console.log(process.env.REACT_APP_API_URL);
+  
     const getAllProducts = () => {
       axios
-        .get(apiURL)
+        .get(`${process.env.REACT_APP_API_URL}/api/products`)
         .then((response) => {
-          setAllProducts(response.data);
+          console.log('response', response.data)
+          setProducts(response.data);
         })
         .catch((err) => console.log(err));
     };
+
+    useEffect(() => {
+      getAllProducts();
+    }, [] );
+
     return(
-      <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 140 }}
-        image= {allProducts.imgURL}
-        title={allProducts.name}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {allProducts.name}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {allProducts.description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Add to Cart</Button>
-        <Button size="small">More Info</Button>
-      </CardActions>
+      <div className="ProductListPage">
+      
+        {products.map((product) => {
+          return (
+            <div className="ProductCard card" key={product._id} style={{ display: 'inline-block' }}  >
+              <Link to={`/projects/${product._id}`}>
+              <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={product.imgURL} />
+      <Card.Body style={{ display: 'inline-block' }} >
+        <Card.Title>{product.name}</Card.Title>
+        <Card.Text>
+          {product.description}
+          {product.price}
+        </Card.Text>
+        <Button variant="primary">Add to Cart </Button>
+      </Card.Body>
     </Card>
-  );
+              </Link>
+            </div>
+          );
+        })}     
+       
+    </div>
+    
+
+  )
 }
 
 
