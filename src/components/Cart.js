@@ -1,7 +1,15 @@
 import React from 'react';
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+import {CheckoutForm} from '@stripe/checkoutform-js'
 
 function Cart({ cart, removeFromCart }) {
-  return (
+  const options = {
+    clientSecret: '{{CLIENT_SECRET}}',
+  };
+  const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+
+  return (   <>
     <div className="cart">
       <h2>Cart</h2>
       <ul>
@@ -13,6 +21,11 @@ function Cart({ cart, removeFromCart }) {
         ))}
       </ul>
     </div>
+ 
+          <Elements stripe={stripePromise} options={options}>
+      <CheckoutForm />
+    </Elements>
+</>
   );
 }
 
