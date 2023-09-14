@@ -47,9 +47,7 @@ function Header() {
 };
 
 
->>>>>>> c7216923600e70945943d1d52561bda0e767f664:src/components/Header.js
-    )
-    };
+
 
 
     export default Header;
