@@ -1,7 +1,7 @@
 import React from 'react';
 import {Elements} from '@stripe/react-stripe-js';
 import {loadStripe} from '@stripe/stripe-js';
-import {CheckoutForm} from '@stripe/checkoutform-js'
+import CheckoutForm from './CheckoutForm';
 
 function Cart({ cart, removeFromCart }) {
   const options = {

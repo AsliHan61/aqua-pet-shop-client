@@ -7,7 +7,7 @@ import ProductsPage from '../src/pages/ProductsPage';
 import ProductDetail from '../src/pages/ProductDetail';
 import NewProduct from './components/NewProduct';
 import Login from '../src/pages/Login';
-import Cart from './src/components/Cart';
+import Cart from './components/Cart';
 
 import Signup from '../src/pages/Signup';
 
